@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachamadugu Sri Lakshmi Himasri | Portfolio</title>
+    <meta name="description" content="Portfolio of Rachamadugu Sri Lakshmi Himasri — Integrated M.Tech Computer Science Engineering student interested in web development, software engineering, and AI.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOGIN GATE ============ -->
+<div class="login-gate" id="login-gate">
+
+  <!-- Right-side ambient glow -->
+  <div class="login-bg-glow"></div>
+
+  <div class="login-panel">
+
+    <p class="login-brand-tag">HIMASRI PORTFOLIO</p>
+    <h1 class="login-heading">Welcome back</h1>
+    <p class="login-subtext">Sign in to continue to the portfolio.</p>
+
+    <!-- Google OAuth -->
+    <button id="auth-google" class="google-btn" type="button">
+      <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.1 24.1 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+      <span>Continue with Google</span>
+    </button>
+
+    <!-- Divider -->
+    <div class="login-divider">
+      <div class="divider-line"></div>
+      <span>or continue with email</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Email / Password form -->
+    <form id="auth-login-form" autocomplete="off">
+      <div class="form-field">
+        <label for="auth-email">Email address</label>
+        <input id="auth-email" type="email" placeholder="you@example.com" autocomplete="email" required>
+      </div>
+
+      <div class="form-field">
+        <label for="auth-password">Password</label>
+        <div class="password-wrap">
+          <input id="auth-password" type="password" placeholder="Enter your password" autocomplete="current-password" minlength="8" required>
+          <button type="button" class="pw-toggle" id="toggle-pw" aria-label="Toggle password visibility">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <button class="signin-btn" type="submit" id="login-submit">
+        <span class="btn-label">Sign in</span>
+        <i class="fa-solid fa-arrow-right btn-arrow"></i>
+        <span class="btn-loading" hidden>
+          <i class="fa-solid fa-circle-notch fa-spin"></i>
+          Signing in…
+        </span>
+      </button>
+    </form>
+
+    <a href="#" class="forgot-link" id="forgot-link">Forgot password?</a>
+
+    <p class="register-text">
+      Don't have an account?
+      <a href="#" class="register-link" id="auth-register">Create one</a>
+    </p>
+
+    <!-- Status message -->
+    <p id="auth-message" class="login-msg" role="status" aria-live="polite"></p>
+
+  </div>
+</div>
+
+<!-- ============ PORTFOLIO ============ -->
+<div class="portfolio" id="portfolio" hidden>
+
+  <!-- Sticky header -->
+  <header id="site-header">
+    <nav>
+      <a href="#home" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-terminal"></i></span>
+        <span>Portfolio</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certificates" class="nav-link">Certificates</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#" class="nav-link logout-link" id="auth-logout-link">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-particles" id="hero-particles"></div>
+    <div class="hero-content reveal">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">
+        Rachamadugu Sri Lakshmi
+        <span class="hero-accent"> Himasri</span>
+        <span class="typed-cursor">|</span>
+      </h1>
+      <p class="hero-tagline" id="hero-tagline"></p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+        <a href="#projects" class="btn-outline"><i class="fa-solid fa-folder-open"></i> View Projects</a>
+      <a href="resume.html" class="btn-outline" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-download"></i> View / Save Resume</a>
+
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-count="8.36">0</span><span class="stat-label">CGPA / 10</span></div>
+        <div class="stat"><span class="stat-num" data-count="7">0</span><span class="stat-label">Core Skills</span></div>
+        <div class="stat"><span class="stat-num" data-count="2">0</span><span class="stat-label">Projects</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title reveal"><span>About</span> Me</h2>
+    <div class="about-grid reveal">
+      <div class="about-card">
+        <div class="about-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h3>Education</h3>
+        <p>Integrated M.Tech in Computer Science Engineering at VIT-AP University</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>Developer</h3>
+        <p>Interested in web development, software engineering, and AI</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <h3>Innovator</h3>
+        <p>Love solving real-world problems through technology</p>
+      </div>
+    </div>
+    <p class="about-text reveal">
+      I am pursuing my Integrated M.Tech in Computer Science Engineering at
+      Vellore Institute of Technology, Amaravati (VIT-AP) with a CGPA of 8.36/10.
+      I am passionate about solving real-world problems through software
+      development, AI and web technologies. I enjoy learning new technologies
+      and working on practical projects.
+    </p>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2 class="section-title reveal"><span>My</span> Education</h2>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-dot"><i class="fa-solid fa-university"></i></div>
+        <div class="timeline-card">
+          <span class="timeline-badge">2023 – 2028</span>
+          <h3>Integrated M.Tech — Computer Science Engineering</h3>
+          <p class="timeline-school"><i class="fa-solid fa-location-dot"></i> Vellore Institute of Technology, Amaravati (VIT-AP)</p>
+          <div class="timeline-cgpa">
+            <span>CGPA</span>
+            <div class="progress-bar"><div class="progress-fill" data-width="83.6"></div></div>
+            <span class="cgpa-val">8.36 / 10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="section-title reveal"><span>Technical</span> Skills</h2>
+    <div class="skills-grid reveal">
+      <div class="skill-card" data-tilt>
+        <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
+        <span>Java</span>
+        <div class="skill-level"><div class="skill-bar" data-width="85"></div></div>
+      </div>
+      <div class="skill-card" data-tilt>
+        <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+        <span>Python</span>
+        <div class="skill-level"><div class="skill-bar" data-width="80"></div></div>
+      </div>
+      <div class="skill-card" data-tilt>
+        <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+        <span>HTML</span>
+        <div class="skill-level"><div class="skill-bar" data-width="90"></div></div>
+      </div>
+      <div class="skill-card" data-tilt>
+        <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+        <span>CSS</span>
+        <div class="skill-level"><div class="skill-bar" data-width="85"></div></div>
+      </div>
+      <div class="skill-card" data-tilt>
+        <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+        <span>MySQL</span>
+        <div class="skill-level"><div class="skill-bar" data-width="75"></div></div>
+      </div>
+      <div class="skill-card" data-tilt>
+        <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+        <span>JavaScript</span>
+        <div class="skill-level"><div class="skill-bar" data-width="75"></div></div>
+      </div>
+      <div class="skill-card" data-tilt>
+        <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <span>MATLAB</span>
+        <div class="skill-level"><div class="skill-bar" data-width="70"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2 class="section-title reveal"><span>My</span> Projects</h2>
+    <div class="projects-grid reveal">
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon"><i class="fa-solid fa-seedling"></i></div>
+          <div class="project-links">
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+        <h3>Automatic Irrigation System Using Fuzzy Logic</h3>
+        <p>Designed an intelligent irrigation system that automatically controls water flow based on soil moisture and environmental conditions.</p>
+        <div class="project-tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Fuzzy Logic</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon"><i class="fa-solid fa-code"></i></div>
+          <div class="project-links"><a href="https://github.com/himasri756-gif" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></div>
+        </div>
+        <h3>Personal Portfolio Website</h3>
+        <p>Created a responsive portfolio to present skills, projects, education, and contact information, with deployment practice using AWS and Nginx.</p>
+        <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Docker</span><span>AWS EC2</span><span>Terraform</span><span>Nginx</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates">
+    <h2 class="section-title reveal"><span>Certificates</span></h2>
+    <div class="about-grid reveal">
+      <div class="about-card"><div class="about-icon"><i class="fa-solid fa-certificate"></i></div><h3>Agentic AI</h3><p>Certificate listed in the supplied profile details.</p></div>
+      <div class="about-card"><div class="about-icon"><i class="fa-solid fa-award"></i></div><h3>Pinnacle</h3><p>Certificate listed in the supplied profile details.</p></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 class="section-title reveal"><span>Get In</span> Touch</h2>
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <span class="contact-label">Email</span>
+            <a href="mailto:himasri756@gmail.com">himasri756@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <span class="contact-label">Email Contact</span>
+            <a href="mailto:himasri756@gmail.com">Send me an email</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <span class="contact-label">Location</span>
+            <p>Amaravati, Andhra Pradesh, India</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-actions">
+        <a href="https://www.linkedin.com/in/himasri-rachamadugu-5a755a382/" class="social-btn linkedin">
+          <i class="fab fa-linkedin-in"></i> LinkedIn
+        </a>
+        <a href="https://github.com/himasri756-gif" class="social-btn github">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="resume.html" class="social-btn resume" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Rachamadugu Sri Lakshmi | All Rights Reserved</p>
+      <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-chevron-up"></i>
+      </button>
+    </div>
+  </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth-config.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
